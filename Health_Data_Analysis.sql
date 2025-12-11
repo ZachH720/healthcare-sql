@@ -68,5 +68,13 @@ SELECT
     COUNT(*) AS Patient_Count
 FROM health_data
 GROUP BY Age_Group
-ORDER BY MIN(age);
+ORDER BY MIN(age); -- Sort ranges logically
 -- Findings: A list of age ranges and total patients within those age ranges. The list begins with youngest patients and end with eldest.
+
+-- 6. Find the longest and shortest patient admissions.
+SELECT MIN(DATEDIFF(discharge_date, admission_date)) AS Min_Days_Admitted,
+       MAX(DATEDIFF(discharge_date, admission_date)) AS Max_Days_Admitted 
+FROM health_data;
+-- Findings: Min_Days_Admitted = 1  Max_Days_Admitted = 30
+
+-- 7.
