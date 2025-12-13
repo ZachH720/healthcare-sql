@@ -45,9 +45,9 @@ SELECT MAX(age) AS Maximum_Age, MIN(age) AS Minimum_Age, ROUND(AVG(age), 2) AS A
 FROM health_data;
 /* Findings:
 
-      Maximum_Age	 | Minimum_Age | Average_Age
+      Maximum_Age | Minimum_Age | Average_Age
       ----------------------------------------
-      89	         | 13          | 51.54
+      89          | 13          | 51.54
 */
 
 -- 3. Find the top ten doctors taking care of the most patients and the amount of patients in their care
@@ -57,17 +57,17 @@ ORDER BY Number_of_Patients DESC
 LIMIT 10;
 /* Findings: A table with the top ten doctor's who have the most patients in descending order.
  
-        Doctor            |	  Number_of_Patients
+        Doctor            |   Number_of_Patients
         ----------------------------------------
         Michael Smith	  |   27
-        John Smith	      |   22
-        Robert Smith	  |   22
-        James Smith	      |   20
+        John Smith        |   22
+        Robert Smith      |   22
+        James Smith       |   20
         Michael Johnson   |   20
-        David Smith	      |   19
+        David Smith       |   19
         Robert Johnson    |   19
-        Michael Williams  |	  18
-        Matthew Smith	  |   17
+        Michael Williams  |   18
+        Matthew Smith     |   17
         Christopher Smith |   17
 */
 
@@ -92,16 +92,16 @@ GROUP BY Age_Group
 ORDER BY MIN(age);
 /* Findings: A list of age ranges and total patients within those age ranges. The list begins with youngest patients and end with eldest.
 
-        Age_Group	  | Patient_Count
+        Age_Group | Patient_Count
         ---------------------------
-        10-19	      | 1693
-        20-29	      | 8000
-        30-39	      | 8179
-        40-49         | 8130
-        50-59	      | 8350
-        60-69	      | 8177
-        70-79	      | 8072
-        80-89	      | 4899
+        10-19     | 1693
+        20-29     | 8000
+        30-39     | 8179
+        40-49     | 8130
+        50-59     | 8350
+        60-69     | 8177
+        70-79     | 8072
+        80-89     | 4899
 */
 
 -- 5. Find the longest and shortest patient admissions.
@@ -125,38 +125,38 @@ GROUP BY Length_of_Admission
 ORDER BY Length_of_Admission;
 /* Findings: A table ordered by duration of admissions with average billing cost associated to length of stay. The total amount of patients is also listed for each admission duration.
 
-      Length_of_Admission |	Average_Billing_Amount	| Total_Patients
+      Length_of_Admission | Average_Billing_Amount | Total_Patients
       --------------------------------------------------------------
-      1	                  | 25310.91                | 1817
-      2	                  | 25288.46	            | 1844
-      3	                  | 25963.83	            | 1841
-      4	                  | 26005.48                | 1863
-      5	                  | 25472.86	            | 1832
-      6	                  | 25939.12	            | 1903
-      7	                  | 25729.11                | 1886
-      8	                  | 26123.39	            | 1828
-      9                   |	25558.2                 | 1868
-      10	              | 25434.42	            | 1802
-      11	              | 25118.4	                | 1895
-      12	              | 25499.9	                | 1843
-      13	              | 24943.19                | 1864
-      14	              | 26286.29	            | 1909
-      15	              | 25701.13	            | 1785
-      16	              | 25735.81                | 1757
-      17	              | 25386.88                | 1818
-      18	              | 24795.85                | 1819
-      19	              | 25125.44                | 1890
-      20	              | 25881.44                | 1907
-      21                  | 25435.7	                | 1959
-      22	              | 25394.88	            | 1784
-      23	              | 25909.97	            | 1866
-      24	              | 25823.47                | 1759
-      25                  |	25277.98	            | 1864
-      26	              | 25558.6                 | 1819
-      27	              | 25489.47                | 1884
-      28	              | 25795.11	            | 1853
-      29	              | 24803.92	            | 1867
-      30                  | 25385.38	            | 1874
+      1                   | 25310.91               | 1817
+      2	                  | 25288.46               | 1844
+      3	                  | 25963.83               | 1841
+      4	                  | 26005.48               | 1863
+      5	                  | 25472.86               | 1832
+      6	                  | 25939.12               | 1903
+      7	                  | 25729.11               | 1886
+      8	                  | 26123.39               | 1828
+      9                   | 25558.2                | 1868
+      10                  | 25434.42               | 1802
+      11                  | 25118.4                | 1895
+      12                  | 25499.9                | 1843
+      13                  | 24943.19               | 1864
+      14                  | 26286.29               | 1909
+      15                  | 25701.13               | 1785
+      16                  | 25735.81               | 1757
+      17                  | 25386.88               | 1818
+      18                  | 24795.85               | 1819
+      19                  | 25125.44               | 1890
+      20                  | 25881.44               | 1907
+      21                  | 25435.7                | 1959
+      22                  | 25394.88               | 1784
+      23                  | 25909.97               | 1866
+      24                  | 25823.47               | 1759
+      25                  | 25277.98               | 1864
+      26                  | 25558.6                | 1819
+      27                  | 25489.47               | 1884
+      28                  | 25795.11               | 1853
+      29                  | 24803.92               | 1867
+      30                  | 25385.38               | 1874
 */
 
 -- 7. Find how many patients each insurance company covers.
@@ -167,11 +167,11 @@ ORDER BY insurance_provider;
 
      insurance_provider	| Total_Patients_Covered
      --------------------------------------------
-     Aetna	            | 10913
-     Blue Cross	        | 11059
-     Cigna	            | 11249
-     Medicare	        | 11154
-     UnitedHealthcare	| 11125
+     Aetna              | 10913
+     Blue Cross         | 11059
+     Cigna              | 11249
+     Medicare           | 11154
+     UnitedHealthcare   | 11125
 */
 
 
@@ -225,12 +225,12 @@ WHERE Total - Elderly_Abnormal_Count = 0 AND Total > 2;
 
 /* Findings
 
-        hospital	        | Total 	 |  Elderly_Abnormal_Count
+        hospital         | Total | Elderly_Abnormal_Count
         ------------------------------------------------------
-        Davis-Simpson	    | 3	         |  3
-        Gallegos Ltd	    | 3	         |  3
-        Group Mullins       | 3          |	3
-        LLC Hahn	        | 3          |	3
-        Montoya Inc	        | 3          |	3
-        Singleton Group     | 3          |	3
+        Davis-Simpson    | 3     | 3
+        Gallegos Ltd     | 3     | 3
+        Group Mullins    | 3     | 3
+        LLC Hahn         | 3     | 3
+        Montoya Inc      | 3     | 3
+        Singleton Group  | 3     | 3
 */
