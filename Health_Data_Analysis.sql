@@ -77,4 +77,37 @@ SELECT MIN(DATEDIFF(discharge_date, admission_date)) AS Min_Days_Admitted,
 FROM health_data;
 -- Findings: Min_Days_Admitted = 1  Max_Days_Admitted = 30
 
--- 7.
+-- 7. Find the average billing cost grouped by length of admission, and include amount of patients in category.
+SELECT DATEDIFF(discharge_date, admission_date) AS Length_of_Admission,
+   ROUND(AVG(billing_amount), 2) AS Average_Billing_Amount,
+   COUNT(DATEDIFF(discharge_date, admission_date)) AS Total_Patients
+FROM health_data
+GROUP BY Length_of_Admission
+ORDER BY Length_of_Admission;
+-- Findings: A table ordered by duration of admissions with average billing cost associated to length of stay. The total amount of patients is also listed for each admission duration.
+
+-- 8. Find how many patients each insurance company covers.
+SELECT insurance_provider, COUNT(*) AS Total_Patients_Covered FROM health_data
+GROUP BY insurance_provider
+ORDER BY insurance_provider;
+-- Findings: A table with each insurance company and all associated patients that they cover.
+
+-- 9. Find each category of test results and how many patients are included in each.
+SELECT test_results, COUNT(test_results) AS Total_Patients FROM health_data
+GROUP BY test_results
+ORDER BY test_results; 
+-- Findings: test_results | Total_Patients
+--           Abnormal     | 18627
+--           Inconclusive | 18356
+--           Normal       | 18517  
+
+-- 10. What is the number of patients for each blood type and the percentage of patients with abnormal results.
+SELECT 
+	blood_type,
+  COUNT(CASE WHEN test_results = 'Abnormal' THEN 1 ELSE NULL END) AS Abnormal_Count,
+  COUNT(*) AS Total_Count,
+  ROUND(CAST(COUNT(CASE WHEN test_results = 'Abnormal'THEN 1 ELSE NULL END) AS FLOAT) / COUNT(*), 2) AS Abnormal_Percentage
+FROM health_data
+GROUP BY blood_type
+ORDER BY blood_type;
+-- Findings: A table with four columns and rows seperated by blood type. The table indicated total patients by blood type, how many were abnormal and then the percentage of abnormal test results by blood type.
