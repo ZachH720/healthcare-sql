@@ -59,15 +59,15 @@ LIMIT 10;
  
         Doctor            |	  Number_of_Patients
         ----------------------------------------
-        Michael Smith	    |   27
+        Michael Smith	  |   27
         John Smith	      |   22
-        Robert Smith	    |   22
+        Robert Smith	  |   22
         James Smith	      |   20
         Michael Johnson   |   20
         David Smith	      |   19
         Robert Johnson    |   19
         Michael Williams  |	  18
-        Matthew Smith	    |   17
+        Matthew Smith	  |   17
         Christopher Smith |   17
 */
 
@@ -97,7 +97,7 @@ ORDER BY MIN(age);
         10-19	      | 1693
         20-29	      | 8000
         30-39	      | 8179
-        40-49       | 8130
+        40-49         | 8130
         50-59	      | 8350
         60-69	      | 8177
         70-79	      | 8072
@@ -127,36 +127,36 @@ ORDER BY Length_of_Admission;
 
       Length_of_Admission |	Average_Billing_Amount	| Total_Patients
       --------------------------------------------------------------
-      1	                  | 25310.91                |	1817
-      2	                  | 25288.46	              | 1844
-      3	                  | 25963.83	              | 1841
-      4	                  | 26005.48                |	1863
-      5	                  | 25472.86	              | 1832
-      6	                  | 25939.12	              | 1903
-      7	                  | 25729.11                |	1886
-      8	                  | 26123.39	              | 1828
-      9                   |	25558.2                 |	1868
-      10	                | 25434.42	              | 1802
-      11	                | 25118.4	                | 1895
-      12	                | 25499.9	                | 1843
-      13	                | 24943.19                |	1864
-      14	                | 26286.29	              | 1909
-      15	                | 25701.13	              | 1785
-      16	                | 25735.81                |	1757
-      17	                | 25386.88                |	1818
-      18	                | 24795.85                |	1819
-      19	                | 25125.44                |	1890
-      20	                | 25881.44                |	1907
-      21	                | 25435.7	                | 1959
-      22	                | 25394.88	              | 1784
-      23	                | 25909.97	              | 1866
-      24	                | 25823.47                |	1759
-      25                  |	25277.98	              | 1864
-      26	                | 25558.6                 |	1819
-      27	                | 25489.47                |	1884
-      28	                | 25795.11	              | 1853
-      29	                | 24803.92	              | 1867
-      30	                | 25385.38	              | 1874
+      1	                  | 25310.91                | 1817
+      2	                  | 25288.46	            | 1844
+      3	                  | 25963.83	            | 1841
+      4	                  | 26005.48                | 1863
+      5	                  | 25472.86	            | 1832
+      6	                  | 25939.12	            | 1903
+      7	                  | 25729.11                | 1886
+      8	                  | 26123.39	            | 1828
+      9                   |	25558.2                 | 1868
+      10	              | 25434.42	            | 1802
+      11	              | 25118.4	                | 1895
+      12	              | 25499.9	                | 1843
+      13	              | 24943.19                | 1864
+      14	              | 26286.29	            | 1909
+      15	              | 25701.13	            | 1785
+      16	              | 25735.81                | 1757
+      17	              | 25386.88                | 1818
+      18	              | 24795.85                | 1819
+      19	              | 25125.44                | 1890
+      20	              | 25881.44                | 1907
+      21                  | 25435.7	                | 1959
+      22	              | 25394.88	            | 1784
+      23	              | 25909.97	            | 1866
+      24	              | 25823.47                | 1759
+      25                  |	25277.98	            | 1864
+      26	              | 25558.6                 | 1819
+      27	              | 25489.47                | 1884
+      28	              | 25795.11	            | 1853
+      29	              | 24803.92	            | 1867
+      30                  | 25385.38	            | 1874
 */
 
 -- 7. Find how many patients each insurance company covers.
@@ -170,8 +170,8 @@ ORDER BY insurance_provider;
      Aetna	            | 10913
      Blue Cross	        | 11059
      Cigna	            | 11249
-     Medicare	          | 11154
-     UnitedHealthcare	  | 11125
+     Medicare	        | 11154
+     UnitedHealthcare	| 11125
 */
 
 
@@ -190,7 +190,7 @@ ORDER BY test_results;
 
 -- 9. What is the number of patients for each blood type and the percentage of patients with abnormal results.
 SELECT 
-	blood_type,
+  blood_type,
   COUNT(CASE WHEN test_results = 'Abnormal' THEN 1 ELSE NULL END) AS Abnormal_Count,
   COUNT(*) AS Total_Count,
   ROUND(CAST(COUNT(CASE WHEN test_results = 'Abnormal'THEN 1 ELSE NULL END) AS FLOAT) / COUNT(*), 2) AS Abnormal_Percentage
@@ -227,10 +227,10 @@ WHERE Total - Elderly_Abnormal_Count = 0 AND Total > 2;
 
         hospital	        | Total 	 |  Elderly_Abnormal_Count
         ------------------------------------------------------
-        Davis-Simpson	    | 3	       |  3
-        Gallegos Ltd	    | 3	       |  3
-        Group Mullins     |	3        |	3
-        LLC Hahn	        | 3        |	3
-        Montoya Inc	      | 3        |	3
-        Singleton Group   |	3        |	3
+        Davis-Simpson	    | 3	         |  3
+        Gallegos Ltd	    | 3	         |  3
+        Group Mullins       | 3          |	3
+        LLC Hahn	        | 3          |	3
+        Montoya Inc	        | 3          |	3
+        Singleton Group     | 3          |	3
 */
